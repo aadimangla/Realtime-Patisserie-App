@@ -6,6 +6,7 @@ body {
     -webkit-font-smoothing: antialiased;
     color: $dark;
     // background: $dark;
+    // height: 4000px;
 }
 
 .logo {
@@ -27,4 +28,21 @@ nav li a {
 
 section.hero {
     background: $secondary;
+}
+
+.size {
+    background: $secondary;
+}
+
+.add-to-cart {
+    border: 2px solid $primary-hover;
+    color: $primary-hover;
+    transition: $smooth;
+
+    &:hover {
+        border: 2px solid $primary;
+        border-color: $primary;
+        color: $primary;
+        background-color: $primary-hover;
+    }
 }
