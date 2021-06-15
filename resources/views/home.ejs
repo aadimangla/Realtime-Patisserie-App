@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- Tailwind CSS -->
-    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/tailwindcss@^1/dist/tailwind.min.css" rel="stylesheet">
 
     <!-- Google Font Lato -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -16,11 +16,46 @@
     <!-- css -->
     <link rel="stylesheet" href="css/app.css">
 
-    <title>Patiserie App</title>
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+        integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+    <title>Patisserie App</title>
 </head>
 
 <body>
-    <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam, ipsam?</h1>
+
+    <section class="navbar">
+        <nav class="container mx-auto flex items-center justify-between py-3">
+            <div>
+                <img class="logo" src="/img/logo.png" alt="logo">
+            </div>
+            <div>
+                <ul class="flex items-center">
+                    <li class="ml-6"><a href="#">Menu</a></li>
+                    <li class="ml-6"><a href="#">Offers</a></li>
+                    <li class="ml-6"><a href="#">Register</a></li>
+                    <li class="ml-6"><a href="#">Login</a></li>
+                    <li class="ml-6"><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
+                </ul>
+
+            </div>
+        </nav>
+    </section>
+    <section class="hero py-16">
+        <div class="container mx-auto flex items-center justify-between">
+            <div class="w-1/2">
+                <h6 class="text-lg"><em>Do you crave dessert?</em></h6>
+                <h1 class="text-6xl font-bold">Don't Wait !</h1>
+            </div>
+            <div class="w-1/2">
+                <img src="/img/hero.png" alt="">
+            </div>
+        </div>
+    </section>
+
 </body>
 <script src="/js/app.js"></script>
 

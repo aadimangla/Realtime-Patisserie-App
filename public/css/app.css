@@ -1,3 +1,25 @@
 body {
   font-family: "Lato", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  color: #232323;
+}
+
+.logo {
+  height: 30%;
+  width: 30%;
+}
+
+.navbar {
+  background: #f5f3e6;
+}
+
+nav li a {
+  transition: all 0.3s ease-in-out;
+}
+nav li a:hover {
+  color: #ce915d;
+}
+
+section.hero {
+  background: #F8F8F8;
 }
