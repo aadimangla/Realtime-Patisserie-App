@@ -1,173 +1,104 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!-- Favicon -->
-    <link rel="apple-touch-icon" sizes="57x57" href="/img/favicon/apple-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="/img/favicon/apple-icon-60x60.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="/img/favicon/apple-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon/apple-icon-76x76.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="/img/favicon/apple-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="/img/favicon/apple-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="/img/favicon/apple-icon-144x144.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="/img/favicon/apple-icon-152x152.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="/img/favicon/apple-icon-180x180.png">
-    <link rel="icon" type="image/png" sizes="192x192" href="/img/favicon/android-icon-192x192.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="/img/favicon/favicon-96x96.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon/favicon-16x16.png">
-    <link rel="manifest" href="/img/favicon/manifest.json">
-    <meta name="msapplication-TileColor" content="#ffffff">
-    <meta name="msapplication-TileImage" content="/img/favicon/ms-icon-144x144.png">
-    <meta name="theme-color" content="#ffffff">
-    <!-- Favicon over -->
-
-    <!-- Tailwind CSS -->
-    <link href="https://unpkg.com/tailwindcss@^1/dist/tailwind.min.css" rel="stylesheet">
-
-    <!-- Google Font Lato -->
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
-
-    <!-- css -->
-    <link rel="stylesheet" href="css/app.css">
-
-    <!-- Font Awesome CDN -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
-        integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-
-    <title>Patisserie App</title>
-</head>
-
-<body>
-
-    <section class="navbar">
-        <nav class="container mx-auto flex items-center justify-between py-3">
-            <div>
-                <img class="logo" src="/img/logo.png" alt="logo">
-            </div>
-            <div>
-                <ul class="flex items-center">
-                    <li class="ml-6"><a href="#">Menu</a></li>
-                    <li class="ml-6"><a href="#">Offers</a></li>
-                    <li class="ml-6"><a href="#">Register</a></li>
-                    <li class="ml-6"><a href="#">Login</a></li>
-                    <li class="ml-6"><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
-                </ul>
-
-            </div>
-        </nav>
-    </section>
-    <section class="hero py-16">
-        <div class="container mx-auto flex items-center justify-between">
-            <div class="w-1/2">
-                <h6 class="text-lg"><em>Do you crave dessert?</em></h6>
-                <h1 class="text-6xl font-bold">Don't Wait !</h1>
-            </div>
-            <div class="w-1/2">
-                <img src="/img/hero.png" alt="">
-            </div>
+<section class="hero py-16">
+    <div class="container mx-auto flex items-center justify-between">
+        <div class="w-1/2">
+            <h6 class="text-lg"><em>Do you crave dessert?</em></h6>
+            <h1 class="text-6xl font-bold">Don't Wait !</h1>
+            <button class="btn-primary px-6 py-2 rounded-full text-white font-bold mt-4">
+                Order Now !
+            </button>
         </div>
-    </section>
+        <div class="w-1/2">
+            <img src="/img/hero.png" alt="">
+        </div>
+    </div>
+</section>
 
-    <section class="menu container mx-auto py-8">
-        <h1 class="text-xl font-bold mb-8">All Cakes</h1>
-        <div class="grid grid-cols-4 col-gap-12 row-gap-16">
-            <div class="w-64">
-                <img class="h-40 mb-4 mx-auto" src="/img/item.jpg">
-                <div class="text-center">
-                    <h2 class="mb-4 text-lg">Chocolate Truffle</h2>
-                    <span class="size py-1 px-4 rounded-full text-xs">500g</span>
-                    <div class="flex items-center justify-around mt-6">
-                        <span class="font-bold text-lg">Rs. 250</span>
-                        <button class="add-to-cart py-1 px-6 rounded-full flex items-center font-bold">
-                            <span>+</span>
-                            <span class="ml-4">Add</span>
-                        </button>
-                    </div>
-                </div>
-            </div>
-            <div class="w-64">
-                <img class="h-40 mb-4 mx-auto" src="/img/item.jpg">
-                <div class="text-center">
-                    <h2 class="mb-4 text-lg">Chocolate Truffle</h2>
-                    <span class="size py-1 px-4 rounded-full text-xs">500g</span>
-                    <div class="flex items-center justify-around mt-6">
-                        <span class="font-bold text-lg">Rs. 250</span>
-                        <button class="add-to-cart py-1 px-6 rounded-full flex items-center font-bold">
-                            <span>+</span>
-                            <span class="ml-4">Add</span>
-                        </button>
-                    </div>
-                </div>
-            </div>
-            <div class="w-64">
-                <img class="h-40 mb-4 mx-auto" src="/img/item.jpg">
-                <div class="text-center">
-                    <h2 class="mb-4 text-lg">Chocolate Truffle</h2>
-                    <span class="size py-1 px-4 rounded-full text-xs">500g</span>
-                    <div class="flex items-center justify-around mt-6">
-                        <span class="font-bold text-lg">Rs. 250</span>
-                        <button class="add-to-cart py-1 px-6 rounded-full flex items-center font-bold">
-                            <span>+</span>
-                            <span class="ml-4">Add</span>
-                        </button>
-                    </div>
-                </div>
-            </div>
-            <div class="w-64">
-                <img class="h-40 mb-4 mx-auto" src="/img/item.jpg">
-                <div class="text-center">
-                    <h2 class="mb-4 text-lg">Chocolate Truffle</h2>
-                    <span class="size py-1 px-4 rounded-full text-xs">500g</span>
-                    <div class="flex items-center justify-around mt-6">
-                        <span class="font-bold text-lg">Rs. 250</span>
-                        <button class="add-to-cart py-1 px-6 rounded-full flex items-center font-bold">
-                            <span>+</span>
-                            <span class="ml-4">Add</span>
-                        </button>
-                    </div>
-                </div>
-            </div>
-            <div class="w-64">
-                <img class="h-40 mb-4 mx-auto" src="/img/item.jpg">
-                <div class="text-center">
-                    <h2 class="mb-4 text-lg">Chocolate Truffle</h2>
-                    <span class="size py-1 px-4 rounded-full text-xs">500g</span>
-                    <div class="flex items-center justify-around mt-6">
-                        <span class="font-bold text-lg">Rs. 250</span>
-                        <button class="add-to-cart py-1 px-6 rounded-full flex items-center font-bold">
-                            <span>+</span>
-                            <span class="ml-4">Add</span>
-                        </button>
-                    </div>
-                </div>
-            </div>
-            <div class="w-64">
-                <img class="h-40 mb-4 mx-auto" src="/img/item.jpg">
-                <div class="text-center">
-                    <h2 class="mb-4 text-lg">Chocolate Truffle</h2>
-                    <span class="size py-1 px-4 rounded-full text-xs">500g</span>
-                    <div class="flex items-center justify-around mt-6">
-                        <span class="font-bold text-lg">Rs. 250</span>
-                        <button class="add-to-cart py-1 px-6 rounded-full flex items-center font-bold">
-                            <span>+</span>
-                            <span class="ml-4">Add</span>
-                        </button>
-                    </div>
+<section class="menu container mx-auto py-8">
+    <h1 class="text-xl font-bold mb-8">All Cakes</h1>
+    <div class="grid grid-cols-4 col-gap-12 row-gap-16">
+        <div class="w-64">
+            <img class="h-40 mb-4 mx-auto" src="/img/item.jpg">
+            <div class="text-center">
+                <h2 class="mb-4 text-lg">Chocolate Truffle</h2>
+                <span class="size py-1 px-4 rounded-full text-xs">500g</span>
+                <div class="flex items-center justify-around mt-6">
+                    <span class="font-bold text-lg">Rs. 250</span>
+                    <button class="add-to-cart py-1 px-6 rounded-full flex items-center font-bold">
+                        <span>+</span>
+                        <span class="ml-4">Add</span>
+                    </button>
                 </div>
             </div>
         </div>
-    </section>
-
-    <script src="/js/app.js"></script>
-</body>
-
-
-</html>
+        <div class="w-64">
+            <img class="h-40 mb-4 mx-auto" src="/img/item.jpg">
+            <div class="text-center">
+                <h2 class="mb-4 text-lg">Chocolate Truffle</h2>
+                <span class="size py-1 px-4 rounded-full text-xs">500g</span>
+                <div class="flex items-center justify-around mt-6">
+                    <span class="font-bold text-lg">Rs. 250</span>
+                    <button class="add-to-cart py-1 px-6 rounded-full flex items-center font-bold">
+                        <span>+</span>
+                        <span class="ml-4">Add</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="w-64">
+            <img class="h-40 mb-4 mx-auto" src="/img/item.jpg">
+            <div class="text-center">
+                <h2 class="mb-4 text-lg">Chocolate Truffle</h2>
+                <span class="size py-1 px-4 rounded-full text-xs">500g</span>
+                <div class="flex items-center justify-around mt-6">
+                    <span class="font-bold text-lg">Rs. 250</span>
+                    <button class="add-to-cart py-1 px-6 rounded-full flex items-center font-bold">
+                        <span>+</span>
+                        <span class="ml-4">Add</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="w-64">
+            <img class="h-40 mb-4 mx-auto" src="/img/item.jpg">
+            <div class="text-center">
+                <h2 class="mb-4 text-lg">Chocolate Truffle</h2>
+                <span class="size py-1 px-4 rounded-full text-xs">500g</span>
+                <div class="flex items-center justify-around mt-6">
+                    <span class="font-bold text-lg">Rs. 250</span>
+                    <button class="add-to-cart py-1 px-6 rounded-full flex items-center font-bold">
+                        <span>+</span>
+                        <span class="ml-4">Add</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="w-64">
+            <img class="h-40 mb-4 mx-auto" src="/img/item.jpg">
+            <div class="text-center">
+                <h2 class="mb-4 text-lg">Chocolate Truffle</h2>
+                <span class="size py-1 px-4 rounded-full text-xs">500g</span>
+                <div class="flex items-center justify-around mt-6">
+                    <span class="font-bold text-lg">Rs. 250</span>
+                    <button class="add-to-cart py-1 px-6 rounded-full flex items-center font-bold">
+                        <span>+</span>
+                        <span class="ml-4">Add</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="w-64">
+            <img class="h-40 mb-4 mx-auto" src="/img/item.jpg">
+            <div class="text-center">
+                <h2 class="mb-4 text-lg">Chocolate Truffle</h2>
+                <span class="size py-1 px-4 rounded-full text-xs">500g</span>
+                <div class="flex items-center justify-around mt-6">
+                    <span class="font-bold text-lg">Rs. 250</span>
+                    <button class="add-to-cart py-1 px-6 rounded-full flex items-center font-bold">
+                        <span>+</span>
+                        <span class="ml-4">Add</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
