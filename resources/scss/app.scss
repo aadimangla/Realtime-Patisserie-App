@@ -64,3 +64,16 @@ section.cart {
 .amount {
     color: $primary-hover;
 }
+
+section.login {
+    background: $secondary;
+    min-height: 100vh;
+
+    a {
+        color: $primary-hover;
+        &:hover {
+            background-color: $primary;
+            color: $primary-hover;
+        }
+    }
+}
