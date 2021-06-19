@@ -58,7 +58,11 @@
                     <li class="ml-6"><a href="#">Offers</a></li>
                     <li class="ml-6"><a href="/register">Register</a></li>
                     <li class="ml-6"><a href="/login">Login</a></li>
-                    <li class="ml-6"><a href="/cart"><i class="fas fa-shopping-cart"></i></a></li>
+                    <li class="ml-6"><a href="/cart">
+                            <span id="cartCounter" class="font-bold"><%= session.cart? session.cart.totalQty : '' %></span>
+                            <i class="fas fa-shopping-cart"></i>
+
+                        </a></li>
                 </ul>
 
             </div>
