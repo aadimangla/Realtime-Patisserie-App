@@ -1877,7 +1877,15 @@ addToCart.forEach(function (btn) {
     var cake = JSON.parse(btn.dataset.cake);
     updateCart(cake); // console.log(cake.name);
   });
-});
+}); // Remove alert message after X seconds
+
+var alertMsg = document.querySelector('#success-alert');
+
+if (alertMsg) {
+  setTimeout(function () {
+    alertMsg.remove();
+  }, 2000);
+}
 
 /***/ }),
 
