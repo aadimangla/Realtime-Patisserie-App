@@ -3,6 +3,10 @@ const bcrypt = require('bcrypt');
 const passport = require('passport')
 
 function authController() {
+    const _getRedirectedUrl = (req) => {
+    return req.user.role === 'admin' ? '/admin/orders' : '/'
+}
+
     return {
         login(req, res) {
             res.render('auth/login')
@@ -34,7 +38,7 @@ function authController() {
                         return next(err)
                     }
 
-                    return res.redirect('/')
+                    return res.redirect(_getRedirectedUrl(req))
                 })
             })(req, res, next)
         }
@@ -74,7 +78,7 @@ function authController() {
             });
             user.save().then((user) => {
                 // Login
-                return res.redirect('/')
+                return res.redirect('/login')
             }).catch(err => {
                 req.flash('error', 'Something went Wrong!');
                 return res.redirect('/register')
