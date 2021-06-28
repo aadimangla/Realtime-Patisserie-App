@@ -1,6 +1,6 @@
 <section class="cart py-16">
     <% if(session.cart){ %>
-    <div class="order container mx-auto w-1/2">
+    <div class="order container mx-auto lg:w-1/2">
 
         <div class="flex items-center border-b border-gray-300 pb-4">
             <i class="fas fa-shopping-cart"></i>
@@ -28,7 +28,7 @@
                 <span class="text-lg font-bold">Total Amount: </span>
                 <span class="amount text-2xl font-bold ml-2"><%= session.cart.totalPrice %></span>
             </div>
-<% if(user){ %>
+            <% if(user){ %>
             <div>
                 <form method="POST" class="mt-12" action="/orders">
                     <input name="phone" class="border border-gray-400 p-2 w-1/2" type="text" placeholder="Phone Number">
@@ -43,14 +43,15 @@
             </div>
             <% }else{ %>
 
-            <a href="/login" class="inline-block cursor-pointer btn-primary px-6 py-2 rounded-full font-bold mt-6 text-white">
+            <a href="/login"
+                class="inline-block cursor-pointer btn-primary px-6 py-2 rounded-full font-bold mt-6 text-white">
                 Login to Continue
             </a>
             <% } %>
         </div>
 
     </div>
-<%} else {%>
+    <%} else {%>
     <div class="empty-cart py-4">
         <div class="container mx-auto text-center">
             <h1 class="text-3xl font-bold mb-2">Cart Empty 😗!</h1>
@@ -62,5 +63,5 @@
         </div>
 
     </div>
-<% } %>
+    <% } %>
 </section>
