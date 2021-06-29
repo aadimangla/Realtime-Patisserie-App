@@ -1928,6 +1928,41 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 var addToCart = document.querySelectorAll('.add-to-cart');
 var cartCounter = document.querySelector('#cartCounter');
+var deleteItem = document.querySelectorAll('#deleteItem');
+var totalPrice = document.getElementById('totalPrice');
+
+function deleteCartItem(cakeId) {
+  console.log(cakeId);
+  axios__WEBPACK_IMPORTED_MODULE_0___default().post('/delete-item', cakeId).then(function (res) {
+    // console.log(res.data.id);
+    document.getElementById("".concat(res.data.id)).remove();
+    totalPrice.innerHTML = res.data.totalPrice;
+    cartCounter.innerHTML = res.data.totalQty;
+    new (noty__WEBPACK_IMPORTED_MODULE_1___default())({
+      type: 'success',
+      timeout: 1000,
+      progressBar: false,
+      text: 'Item Deleted from Cart'
+    }).show();
+  })["catch"](function (err) {
+    new (noty__WEBPACK_IMPORTED_MODULE_1___default())({
+      type: 'error',
+      timeout: 1000,
+      text: 'Something went Worng!',
+      progressBar: false
+    }).show();
+  });
+}
+
+deleteItem.forEach(function (btn) {
+  btn.addEventListener('click', function (e) {
+    // console.log(btn.dataset.cakeid);
+    var deleteCakeId = {
+      id: btn.dataset.cakeid
+    };
+    deleteCartItem(deleteCakeId);
+  });
+});
 
 function updateCart(cake) {
   axios__WEBPACK_IMPORTED_MODULE_0___default().post('/update-cart', cake).then(function (res) {

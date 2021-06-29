@@ -9,7 +9,7 @@
 
         <div class="cake-list ">
             <% for(let cake of Object.values(session.cart.items)){ %>
-            <div class="flex items-center my-8">
+            <div class="flex items-center my-8" id="<%= cake.item._id %>">
                 <img class="w-24" src="/img/<%=cake.item.image%>" alt="">
                 <div class="ml-4 flex-1">
                     <h1><%=cake.item.name%></h1>
@@ -17,6 +17,7 @@
                 </div>
                 <span class="flex-1"><%=cake.qty%></span>
                 <span class="font-bold text-lg">Rs.<%=(cake.item.price)*(cake.qty)%></span>
+                <button class="ml-12" id="deleteItem" data-cakeid="<%= cake.item._id %>"><i class="far fa-2x fa-window-close"></i></button>
             </div>
             <% } %>
 
@@ -26,7 +27,7 @@
         <div class="text-right py-4">
             <div>
                 <span class="text-lg font-bold">Total Amount: </span>
-                <span class="amount text-2xl font-bold ml-2"><%= session.cart.totalPrice %></span>
+                <span class="amount text-2xl font-bold ml-2" id="totalPrice"><%= session.cart.totalPrice %></span>
             </div>
             <% if(user){ %>
             <div>

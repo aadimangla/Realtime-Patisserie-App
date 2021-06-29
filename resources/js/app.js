@@ -5,6 +5,40 @@ import moment from 'moment'
 
 let addToCart = document.querySelectorAll('.add-to-cart');
 let cartCounter = document.querySelector('#cartCounter');
+let deleteItem = document.querySelectorAll('#deleteItem');
+let totalPrice = document.getElementById('totalPrice');
+
+function deleteCartItem(cakeId) {
+    console.log(cakeId)
+    axios.post('/delete-item', cakeId).then(res => {
+        // console.log(res.data.id);
+        document.getElementById(`${res.data.id}`).remove();
+        totalPrice.innerHTML = res.data.totalPrice;
+        cartCounter.innerHTML = res.data.totalQty;
+        new Noty({
+            type: 'success',
+            timeout: 1000,
+            progressBar: false,
+            text: 'Item Deleted from Cart'
+        }).show();
+    }).catch(err => {
+        new Noty({
+            type: 'error',
+            timeout: 1000,
+            text: 'Something went Worng!',
+            progressBar: false
+        }).show();
+    })
+}
+
+deleteItem.forEach((btn) => {
+    btn.addEventListener('click', (e) => {
+        // console.log(btn.dataset.cakeid);
+        let deleteCakeId = {id: btn.dataset.cakeid }
+        deleteCartItem(deleteCakeId)
+    })
+})
+
 
 function updateCart(cake) {
     axios.post('/update-cart', cake).then(res => {
