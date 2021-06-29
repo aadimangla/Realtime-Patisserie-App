@@ -1930,11 +1930,40 @@ var addToCart = document.querySelectorAll('.add-to-cart');
 var cartCounter = document.querySelector('#cartCounter');
 var deleteItem = document.querySelectorAll('#deleteItem');
 var totalPrice = document.getElementById('totalPrice');
+var addQty = document.getElementById('addQty');
+var subQty = document.getElementById('subQty'); // function addQtyItem(cakeid) {
+//     axios.post('/add-Qty', cakeid).then(res => {
+//     }).catch(err => {
+//     })
+// }
+// function subQtyItem(cakeid) {
+//     axios.post('/sub-Qty', cakeid).then(res => {
+//     }).catch(err => {
+//     })
+// }
+// addQty.forEach((btn) => {
+//     btn.addEventListener('click', (e) => {
+//         // console.log(btn.dataset.cakeid);
+//         let addQtyId = { id: btn.dataset.addqtyid }
+//         addQtyItem(addQtyId)
+//     })
+// })
+// subQty.forEach((btn) => {
+//     btn.addEventListener('click', (e) => {
+//         // console.log(btn.dataset.cakeid);
+//         let subQtyId = { id: btn.dataset.subqtyid }
+//         subQtyItem(subQtyId)
+//     })
+// })
 
 function deleteCartItem(cakeId) {
   console.log(cakeId);
   axios__WEBPACK_IMPORTED_MODULE_0___default().post('/delete-item', cakeId).then(function (res) {
     // console.log(res.data.id);
+    if (res.data.totalPrice == 0) {
+      window.location.reload();
+    }
+
     document.getElementById("".concat(res.data.id)).remove();
     totalPrice.innerHTML = res.data.totalPrice;
     cartCounter.innerHTML = res.data.totalQty;

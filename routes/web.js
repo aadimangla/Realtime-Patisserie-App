@@ -26,6 +26,10 @@ function initRoutes(app) {
     app.post('/update-cart', cartController().update)
 
     app.post('/delete-item', cartController().delete)
+
+    // app.post('/add-Qty', cartController().addQty)
+
+    // app.post('/sub-Qty', cartController().subQty)
     
     app.post('/register', authController().postRegister)
 

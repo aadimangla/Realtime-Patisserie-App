@@ -7,12 +7,53 @@ let addToCart = document.querySelectorAll('.add-to-cart');
 let cartCounter = document.querySelector('#cartCounter');
 let deleteItem = document.querySelectorAll('#deleteItem');
 let totalPrice = document.getElementById('totalPrice');
+let addQty = document.getElementById('addQty');
+let subQty = document.getElementById('subQty');
+
+
+// function addQtyItem(cakeid) {
+//     axios.post('/add-Qty', cakeid).then(res => {
+        
+//     }).catch(err => {
+        
+//     })
+    
+// }
+
+// function subQtyItem(cakeid) {
+//     axios.post('/sub-Qty', cakeid).then(res => {
+
+//     }).catch(err => {
+
+//     })
+
+// }
+
+// addQty.forEach((btn) => {
+//     btn.addEventListener('click', (e) => {
+//         // console.log(btn.dataset.cakeid);
+//         let addQtyId = { id: btn.dataset.addqtyid }
+//         addQtyItem(addQtyId)
+//     })
+// })
+
+// subQty.forEach((btn) => {
+//     btn.addEventListener('click', (e) => {
+//         // console.log(btn.dataset.cakeid);
+//         let subQtyId = { id: btn.dataset.subqtyid }
+//         subQtyItem(subQtyId)
+//     })
+// })
 
 function deleteCartItem(cakeId) {
     console.log(cakeId)
     axios.post('/delete-item', cakeId).then(res => {
         // console.log(res.data.id);
+        if (res.data.totalPrice == 0) {
+            window.location.reload();
+        }
         document.getElementById(`${res.data.id}`).remove();
+        
         totalPrice.innerHTML = res.data.totalPrice;
         cartCounter.innerHTML = res.data.totalQty;
         new Noty({
