@@ -2,6 +2,7 @@ import axios from 'axios'
 import Noty from 'noty'
 import initAdmin from './admin'
 import moment from 'moment'
+import initStripe from './stripe'
 
 let addToCart = document.querySelectorAll('.add-to-cart');
 let cartCounter = document.querySelector('#cartCounter');
@@ -13,11 +14,11 @@ let subQty = document.getElementById('subQty');
 
 // function addQtyItem(cakeid) {
 //     axios.post('/add-Qty', cakeid).then(res => {
-        
+
 //     }).catch(err => {
-        
+
 //     })
-    
+
 // }
 
 // function subQtyItem(cakeid) {
@@ -53,7 +54,7 @@ function deleteCartItem(cakeId) {
             window.location.reload();
         }
         document.getElementById(`${res.data.id}`).remove();
-        
+
         totalPrice.innerHTML = res.data.totalPrice;
         cartCounter.innerHTML = res.data.totalQty;
         new Noty({
@@ -75,7 +76,7 @@ function deleteCartItem(cakeId) {
 deleteItem.forEach((btn) => {
     btn.addEventListener('click', (e) => {
         // console.log(btn.dataset.cakeid);
-        let deleteCakeId = {id: btn.dataset.cakeid }
+        let deleteCakeId = { id: btn.dataset.cakeid }
         deleteCartItem(deleteCakeId)
     })
 })
@@ -151,7 +152,11 @@ function updateStatus(order) {
 
 }
 
+
 updateStatus(order);
+
+initStripe();
+
 
 // Socket
 

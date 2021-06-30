@@ -57,7 +57,7 @@ function cartController() {
             cart.totalQty = cart.totalQty - cart.items[cakeId].qty;
             
             delete cart.items[cakeId]
-            console.log(cart.items);
+            // console.log(cart.items);
 
             return res.json({ id: cakeId, totalPrice: cart.totalPrice, totalQty: cart.totalQty })
         }

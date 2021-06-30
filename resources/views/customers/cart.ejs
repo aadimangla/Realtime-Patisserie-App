@@ -1,5 +1,5 @@
 <section class="cart py-16">
-    <% if(session.cart.totalPrice != 0 ){ %>
+    <% if( session.cart && session.cart.totalQty != 0 ){ %>
     <div class="order container mx-auto lg:w-1/2">
 
         <div class="flex items-center border-b border-gray-300 pb-4">
@@ -15,11 +15,11 @@
                     <h1><%=cake.item.name%></h1>
                     <span><%=cake.item.size%></span>
                 </div>
-                <button id="addQty" data-addqtyid="<%= cake.item._id %>">+</button>
+                <!-- <button id="addQty" data-addqtyid="<%= cake.item._id %>">+</button> -->
 
                 <span class="flex-1"><%=cake.qty%></span>
 
-                <button class="mr-20" id="subQty" data-subqtyid="<%= cake.item._id %>">-</button>
+                <!-- <button class="mr-20" id="subQty" data-subqtyid="<%= cake.item._id %>">-</button> -->
 
                 <span class="font-bold text-lg">Rs.<%=(cake.item.price)*(cake.qty)%></span>
                 <button class="ml-12" id="deleteItem" data-cakeid="<%= cake.item._id %>"><i
@@ -37,10 +37,25 @@
             </div>
             <% if(user){ %>
             <div>
-                <form method="POST" class="mt-12" action="/orders">
-                    <input name="phone" class="border border-gray-400 p-2 w-1/2" type="text" placeholder="Phone Number">
-                    <input name="address" class="border border-gray-400 p-2 w-1/2" type="text" placeholder="Address">
+                <form method="POST" class="mt-12" action="/orders" id="payment-form">
+                    <div class="relative w-1/2 ml-auto mb-4">
+                        <select id="paymentType" name="paymentType"
+                            class="block appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded leading-tight focus:outline-none focus:shadow-outline">
+                            <option value="cod">Cash on delivery</option>
+                            <option value="card">Pay with card</option>
+                        </select>
+                        <div
+                            class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+                            <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                                <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
+                            </svg>
+                        </div>
+                    </div>
+                    <input name="phone" class="border border-gray-400 p-2 w-1/2 mb-4" type="text"
+                        placeholder="Phone Number">
+                    <input name="address" class="border border-gray-400 p-2 w-1/2 mb-4" type="text" placeholder="Address">
                     <div>
+                        <div id="card-element"></div>
                         <button class="btn-primary px-6 py-2 rounded-full font-bold mt-6 text-white" type="submit">
                             Order Now
                         </button>

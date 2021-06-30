@@ -11,8 +11,9 @@ const orderSchema = new Schema({
     phone: { type: String, required: true },
     address: { type: String, required: true },
     paymentType: { type: String, default: 'COD' },
+    paymentStatus: { type: Boolean, default: false },
     status: { type: String, default: 'order_placed' }
-}, {timestamps: true});
+}, { timestamps: true });
 
 const Order = mongoose.model('Order', orderSchema);
 
